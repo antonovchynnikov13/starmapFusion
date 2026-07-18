@@ -14,8 +14,8 @@ __pycache__/
 .vscode/
 .idea/
 
-data/
-datasets/
+/data/
+/datasets/
 checkpoints/
 outputs/
 runs/

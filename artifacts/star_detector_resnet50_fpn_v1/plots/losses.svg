@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520">
+<rect width="100%" height="100%" fill="white"/>
+<text x="450.0" y="32" text-anchor="middle" font-family="sans-serif" font-size="22">Training and validation loss</text>
+<line x1="70" y1="450" x2="830" y2="450" stroke="#333"/>
+<line x1="70" y1="70" x2="70" y2="450" stroke="#333"/>
+<text x="450.0" y="502" text-anchor="middle" font-family="sans-serif">Epoch</text>
+<text x="12" y="260.0" font-family="sans-serif" transform="rotate(-90 12 260.0)">Value</text>
+<line x1="70" y1="450.00" x2="830" y2="450.00" stroke="#ddd"/>
+<text x="62" y="454.00" text-anchor="end" font-family="monospace" font-size="12">-0.0116</text>
+<line x1="70" y1="374.00" x2="830" y2="374.00" stroke="#ddd"/>
+<text x="62" y="378.00" text-anchor="end" font-family="monospace" font-size="12">0.2123</text>
+<line x1="70" y1="298.00" x2="830" y2="298.00" stroke="#ddd"/>
+<text x="62" y="302.00" text-anchor="end" font-family="monospace" font-size="12">0.4362</text>
+<line x1="70" y1="222.00" x2="830" y2="222.00" stroke="#ddd"/>
+<text x="62" y="226.00" text-anchor="end" font-family="monospace" font-size="12">0.6601</text>
+<line x1="70" y1="146.00" x2="830" y2="146.00" stroke="#ddd"/>
+<text x="62" y="150.00" text-anchor="end" font-family="monospace" font-size="12">0.8840</text>
+<line x1="70" y1="70.00" x2="830" y2="70.00" stroke="#ddd"/>
+<text x="62" y="74.00" text-anchor="end" font-family="monospace" font-size="12">1.1079</text>
+<polyline points="70.00,219.65 96.21,277.19 122.41,291.61 148.62,304.46 174.83,311.96 201.03,322.88 227.24,331.91 253.45,343.02 279.66,346.91 305.86,355.47 332.07,361.89 358.28,370.86 384.48,375.59 410.69,378.28 436.90,382.34 463.10,388.84 489.31,390.43 515.52,395.86 541.72,400.32 567.93,405.55 594.14,409.01 620.34,411.14 646.55,412.68 672.76,417.88 698.97,418.59 725.17,421.06 751.38,421.25 777.59,423.12 803.79,423.54 830.00,423.79" fill="none" stroke="#2563eb" stroke-width="3"/>
+<text x="680" y="55" font-family="sans-serif" font-size="14" fill="#2563eb">train_loss</text>
+<polyline points="70.00,240.77 96.21,252.33 122.41,272.43 148.62,283.54 174.83,283.60 201.03,285.31 227.24,274.61 253.45,276.64 279.66,262.85 305.86,258.94 332.07,252.97 358.28,244.56 384.48,220.50 410.69,233.15 436.90,225.63 463.10,217.56 489.31,211.19 515.52,190.71 541.72,174.37 567.93,157.53 594.14,148.83 620.34,134.26 646.55,145.06 672.76,115.75 698.97,109.55 725.17,120.15 751.38,104.75 777.59,96.21 803.79,107.83 830.00,105.38" fill="none" stroke="#dc2626" stroke-width="3"/>
+<text x="680" y="77" font-family="sans-serif" font-size="14" fill="#dc2626">validation_loss</text>
+</svg>

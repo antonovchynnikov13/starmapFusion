@@ -80,6 +80,34 @@ Training is intentionally CUDA-only. It uses automatic mixed precision, AdamW,
 a cosine learning-rate schedule, gradient clipping, and writes `best.pt`,
 `last.pt`, and `history.json` after validation.
 
+## Use the trained detector
+
+The inference-ready FP16 checkpoint, model configuration, training history,
+plots, validation metrics, and test metrics are versioned in
+`artifacts/star_detector_resnet50_fpn_v1/`. The compact checkpoint is restored
+to the runtime model automatically and produces the same detections as the
+original FP32 inference export.
+
+Install only the inference dependencies and predict star-center coordinates:
+
+```bash
+python3 -m pip install -r requirements-inference.txt
+
+python3 scripts/predict_stars.py \
+  --checkpoint artifacts/star_detector_resnet50_fpn_v1/weights/best_model_inference_fp16.pt \
+  --input /path/to/photo.jpg \
+  --output-dir predictions
+```
+
+The resulting JSON contains `coordinates` as `[x, y]` pairs and `stars` with
+confidence values. A matching `_detected.png` visualization is also written.
+For conservative classical confirmation, install `sep` and add `--use-sep`.
+SEP-only candidates are intentionally excluded unless `--include-sep-only` is
+specified because they are noisy on cloudy frames.
+
+See the [model card](artifacts/star_detector_resnet50_fpn_v1/README.md) for the
+exact metrics, limitations, checksum, and handoff instructions.
+
 ## Project Structure
 
 - `src/` – source code

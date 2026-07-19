@@ -1,0 +1,6 @@
+numpy>=1.26,<3
+Pillow>=10,<12
+torch>=2.3,<3
+torchvision>=0.18,<1
+tqdm>=4.66,<5
+sep>=1.4,<2

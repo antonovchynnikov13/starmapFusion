@@ -1,0 +1,17 @@
+{
+  "loss": 0.5393619619011879,
+  "precision": 0.8387314439946019,
+  "recall": 0.7717178470796122,
+  "f1": 0.8038303693570452,
+  "true_positives": 16159,
+  "false_positives": 3107,
+  "false_negatives": 4780,
+  "checkpoint": "best_model_inference.pt",
+  "checkpoint_epoch": 7,
+  "manifest": "test.jsonl",
+  "samples": 500,
+  "confidence_threshold": 0.3,
+  "match_radius_heatmap_pixels": 2.0,
+  "match_radius_input_pixels": 8.0,
+  "device": "cpu"
+}

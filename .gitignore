@@ -14,13 +14,14 @@ __pycache__/
 .vscode/
 .idea/
 
-data/
-datasets/
+/data/
+/datasets/
 checkpoints/
 outputs/
 runs/
 
 *.pt
+!artifacts/star_detector_resnet50_fpn_v1/weights/best_model_inference_fp16.pt
 *.pth
 *.ckpt
 

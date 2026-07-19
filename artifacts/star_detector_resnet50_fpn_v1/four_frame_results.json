@@ -1,0 +1,11 @@
+{
+  "confidence_threshold": 0.3,
+  "filtering": "ML detections with optional SEP confirmation; SEP-only candidates disabled",
+  "results": [
+    {"image": "1.jpg", "detected_stars": 24},
+    {"image": "2.jpg", "detected_stars": 20},
+    {"image": "3.jpg", "detected_stars": 0},
+    {"image": "4.jpg", "detected_stars": 2}
+  ],
+  "interpretation": "The LAMOST-only model transfers to clear frames but misses weak stars through clouds, demonstrating a domain gap."
+}

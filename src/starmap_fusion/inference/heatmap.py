@@ -39,7 +39,6 @@ def decode_heatmap(
             torch.stack(
                 (selected[:, 1].to(logits.dtype), selected[:, 0].to(logits.dtype), top_scores),
                 dim=1,
-            )
+            ).to(dtype=torch.float32)
         )
     return decoded
-

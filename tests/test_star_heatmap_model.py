@@ -17,10 +17,12 @@ try:
 
     from starmap_fusion.inference.heatmap import decode_heatmap
     from starmap_fusion.models.star_heatmap import StarHeatmapDetector
+    from starmap_fusion.training.engine import _match_points
 except ImportError:
     torch = None
     decode_heatmap = None
     StarHeatmapDetector = None
+    _match_points = None
 
 
 @unittest.skipIf(torch is None, "PyTorch is not installed in the local environment")
@@ -47,6 +49,16 @@ class StarHeatmapModelTest(unittest.TestCase):
         detections = decode_heatmap(logits, confidence_threshold=0.5)
         self.assertEqual(detections[0].shape, (1, 3))
         self.assertEqual(detections[0][0, :2].tolist(), [5.0, 3.0])
+
+    def test_point_matching_accepts_mixed_precision_predictions(self) -> None:
+        """Validation should compare AMP predictions with float32 targets safely."""
+
+        assert torch is not None
+        assert _match_points is not None
+        predictions = torch.tensor([[5.0, 3.0, 0.9]], dtype=torch.float16)
+        targets = torch.tensor([[5.0, 3.0]], dtype=torch.float32)
+        matched = _match_points(predictions, targets, radius=2.0)
+        self.assertEqual(matched, (1, 0, 0))
 
 
 if __name__ == "__main__":

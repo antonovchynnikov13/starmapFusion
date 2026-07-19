@@ -64,7 +64,9 @@ def _match_points(predictions: Tensor, targets: Tensor, radius: float) -> tuple[
     if targets.shape[0] == 0:
         return 0, int(predictions.shape[0]), 0
 
-    distances = torch.cdist(predictions[:, :2], targets)
+    prediction_coordinates = predictions[:, :2].to(dtype=torch.float32)
+    target_coordinates = targets.to(dtype=torch.float32)
+    distances = torch.cdist(prediction_coordinates, target_coordinates)
     matched_predictions: set[int] = set()
     matched_targets: set[int] = set()
     flat_indices = distances.flatten().argsort()
@@ -262,4 +264,3 @@ def fit(
             f"f1={metrics.f1:.4f}"
         )
     return history
-
